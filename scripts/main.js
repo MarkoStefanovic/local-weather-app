@@ -32,12 +32,13 @@ $(function() {
     var latitude = json.latitude;
     var longitude = json.longitude;
     var url = 'https://api.darksky.net/forecast/ad8f72e2d802ce97b7ab502975c435ac/'+latitude+','+longitude;
-    $.getJSON(url, function(json, textStatus) {
+    $.getJSON(url, function(json,{param1: 'jsonp'}, textStatus) {
       console.log('darksky.net API status: ', textStatus);
       console.log(json);
       calculateWeather(json);
       $('#loading').hide();
     });
+
   }
 
   function calculateWeather(json){
