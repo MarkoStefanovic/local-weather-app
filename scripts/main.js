@@ -23,6 +23,7 @@ $(function() {
     $.getJSON('https://freegeoip.net/json/', function(json, textStatus) {
       console.log('ip-api status: ', textStatus);
       console.log(json);
+
       getWeatherData(json);
     });
   }
@@ -31,18 +32,20 @@ $(function() {
   function getWeatherData(json) {
     var latitude = json.latitude;
     var longitude = json.longitude;
+    var city = json.city;
+    var country = json.country_code;
     var url = 'https://api.darksky.net/forecast/ad8f72e2d802ce97b7ab502975c435ac/'+latitude+','+longitude;
     $.get(url, function(json, textStatus) {
 
       console.log('darksky.net API status: ', textStatus);
       console.log(json);
-      calculateWeather(json);
+      calculateWeather(json,city,country);
     },'jsonp');
     $('#loading').hide();
 
   }
 
-  function calculateWeather(json){
+  function calculateWeather(json,city,country){
     // vars from openweather api
     var fahrenheits = json.currently.temperature;
     var celsius = Math.round((fahrenheits-32)* 5/9);
@@ -52,18 +55,11 @@ $(function() {
     var humidity = json.currently.humidity * 100;
     var pressure = json.currently.pressure;
     var windSpeed = json.currently.windSpeed;
-    //var city = json.name;
-    //var country = json.sys.country;
-
-    // JSON from openweather api is in UTC this way we get it to local time
-  /*  var sunrise = new Date(json.sys.sunrise * 1000).getTime();
-    var sunset = new Date(json.sys.sunset * 1000).getTime();
-    var timeNow = new Date().getTime();*/
-
 
     var id = findId(weatherId);
+    console.log('id:',id);
     var icon = icons[id][0];
-    renderData(celsius,fahrenheits,weather,humidity,pressure,windSpeed,icon,id)
+    renderData(celsius,fahrenheits,weather,humidity,pressure,windSpeed,icon,id,city,country)
 
 
     // finds id in our icons array from weatherId
@@ -73,13 +69,14 @@ $(function() {
       for (i; i < icons.length; i++) {
         // finds where in our array icons is weatherId
         if (icons[i].indexOf(weatherId) > -1) {
+          console.log('icon: '+i);
             return i;
           }
         }
       }
 
 
-    function renderData(celsius,fahrenheits,weather,humidity,pressure,windSpeed,icon,id){
+    function renderData(celsius,fahrenheits,weather,humidity,pressure,windSpeed,icon,id,city,country){
 
       var $tempElement = $('#temperature');
       $tempElement.html(celsius + '&#8451;');
@@ -88,7 +85,7 @@ $(function() {
       $('#pressure').html('pressure: <span>'+pressure+' hPa</span>');
       $('#wind').html('wind speed: <span>'+windSpeed+' miles/h</span>' );
       $('#icon').html('<img src="' + icon + '" />');
-      //$('#city').html('location: <span>'+city + ', ' + country+'</span>');
+      $('#city').html('location: <span>'+city + ', ' + country+'</span>');
       $('#cont').addClass('');
       $('#cont').addClass('.container bg'+id);
 
