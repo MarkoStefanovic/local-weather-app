@@ -26,14 +26,14 @@ $(function() {
       getWeatherData(json);
     });
   }
-
+$.ajaxSetup({ dataType: "jsonp" });
   // get wather data from openweathermap
   function getWeatherData(json) {
     var latitude = json.latitude;
     var longitude = json.longitude;
     var url = 'https://api.darksky.net/forecast/ad8f72e2d802ce97b7ab502975c435ac/'+latitude+','+longitude+'?jsoncallback=?';
     $.getJSON(url, function(json, textStatus) {
-      $.ajaxSetup({ dataType: "jsonp" });
+
       console.log('darksky.net API status: ', textStatus);
       console.log(json);
       calculateWeather(json);
