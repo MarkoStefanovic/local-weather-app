@@ -31,7 +31,7 @@ $(function() {
   function getWeatherData(json) {
     var latitude = json.lat;
     var longitude = json.lon;
-    var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&APPID=f13e1562d642e6f9cde436564c251477';
+    var url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&APPID=f13e1562d642e6f9cde436564c251477';
     $.getJSON(url, function(json, textStatus) {
       console.log('openweathermap status: ', textStatus);
       console.log(json);
