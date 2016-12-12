@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="74" height="72" viewBox="0 0 74 72">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f9f9f9;
+        stroke: #2195b1;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        filter: url(#filter-chain-1);
+        fill-rule: evenodd;
+      }
+    </style>
+
+    <filter id="filter-chain-1" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" in="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.236" result="dropBlur"/>
+      <feFlood flood-opacity="0.15"/>
+      <feComposite operator="in" in2="dropBlur" result="dropShadowComp"/>
+      <feComposite in="SourceGraphic" result="shadowed"/>
+      <feFlood flood-color="#e4e4e4" flood-opacity="0.25"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+      <feBlend mode="multiply" in2="shadowed" result="solidFill"/>
+    </filter>
+  </defs>
+  <g style="fill: #f9f9f9; filter: url(#filter-chain-1)">
+    <path d="M59.383,34.345 C59.992,33.890 60.609,33.447 61.160,32.894 C62.812,31.242 64.070,29.228 64.887,26.914 C65.144,26.187 64.961,25.377 64.414,24.833 C63.871,24.289 63.062,24.103 62.336,24.361 C57.910,25.923 53.125,24.859 49.848,21.580 C46.566,18.299 45.500,13.513 47.066,9.091 C47.324,8.365 47.141,7.558 46.594,7.011 C46.051,6.468 45.242,6.282 44.516,6.539 C42.199,7.359 40.188,8.615 38.535,10.265 C34.344,14.453 33.039,20.392 34.476,25.742 C29.070,26.431 24.211,29.304 20.973,33.715 C20.320,33.621 19.664,33.574 19.000,33.574 C11.281,33.574 5.000,39.855 5.000,47.574 C5.000,55.293 11.281,61.574 19.000,61.574 C20.711,61.574 22.387,61.261 23.965,60.656 C27.582,63.812 32.188,65.574 37.000,65.574 C41.816,65.574 46.418,63.812 50.035,60.656 C51.613,61.261 53.289,61.574 55.000,61.574 C62.719,61.574 69.000,55.293 69.000,47.574 C69.000,41.394 64.949,36.197 59.383,34.345 ZM41.363,13.093 C41.684,12.773 42.024,12.472 42.383,12.191 C42.102,16.687 43.723,21.113 47.020,24.408 C50.316,27.702 54.742,29.324 59.238,29.045 C57.516,31.244 55.141,32.611 52.598,33.195 C49.176,28.849 44.148,26.117 38.606,25.669 C37.070,21.425 37.969,16.490 41.363,13.093 Z" id="path-1" style="stroke: inherit; filter: none; fill: inherit" class="cls-1"/>
+  </g>
+  <use xlink:href="#path-1" style="stroke: #2195b1; filter: none; fill: none"/>
+</svg>

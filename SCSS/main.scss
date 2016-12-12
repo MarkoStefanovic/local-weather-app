@@ -1,0 +1,192 @@
+// bower:scss
+// endbower
+
+// 1.MIXINS
+// 2.COLORS
+// 3.TYPOGRAPHY
+// 4.BUTTONS
+// 5.BASE
+// 6.CONTAINER
+
+/* ############ COLORS  ############## */
+$waikawa-gray: #51588C;
+$waikawaRGBA:rgba(55,57,113, 0.7);
+$rhino: #323971;
+$purple:#9b9cb8;
+$shadow-green:#94C9A9;
+$pink:#DDCAD8;
+/* ############ END/COLORS  ############## */
+
+/* ############ MIXINS  ############## */
+
+
+
+/* ############ END/MIXINS  ############## */
+
+
+
+/* ############ TYPOGRAPHY  ############## */
+// GOOGLE FONTS
+// font-family: 'Fredericka the Great', cursive;
+// font-family: 'Amatic SC', cursive;
+h1{
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 30px;
+}
+
+//links
+a{
+  color:$shadow-green;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+p{
+  margin-bottom: 5px;
+}
+
+/* ############ END/TYPOGRAPHY  ############## */
+
+/* ############ BUTTONS  ############## */
+// switch to celsius...
+.switch{
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+  input{
+    display: none;
+  }
+
+  .slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: darken($waikawa-gray, 20%);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border: 1px $rhino solid;
+
+    &:before{
+      position:absolute;
+      content: '';
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 3px;
+      background: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    &.round{
+      border-radius: 34px;
+    }
+    &.round:before{
+      border-radius: 50%;
+    }
+  }
+
+  input:checked + .slider{
+    background:$waikawa-gray;
+  }
+
+  input:focus + .slider{
+    box-shadow: 0 0 1px $waikawa-gray;
+  }
+
+  input:checked + .slider:before{
+    -webkit-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+}
+/* ############ END/BUTTONS  ############## */
+
+/* ############ BASE  ############## */
+
+body{
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
+  background: $purple;
+}
+.center{
+  margin: 0 auto;
+}
+/* ############ END/BASE  ############## */
+
+/* ############ CONTAINER  ############## */
+.container{
+  min-width: 300px;
+  max-width: 500px;
+  height: 95vh;
+  margin: 0 auto;
+  padding: 10px;
+  &.bg0{background: url('/images/bg/clear-sky-day-bg.jpg');background-size: cover;}
+  &.bg1{background: url('/images/bg/clear-sky-night-bg.jpg');background-size: cover;}
+  &.bg2{background: url('/images/bg/few-clouds-day-bg.jpg');background-size: cover;}
+  &.bg3{background: url('/images/bg/few-clouds-night-bg.jpg');background-size: cover;}
+  &.bg4{background: url('/images/bg/scattered-clouds-bg.jpg');background-size: cover;}
+  &.bg5{background: url('/images/bg/shower-rain-bg.jpg');background-size: cover;}
+  &.bg6{background: url('/images/bg/rain-bg.jpg');background-size: cover;}
+  &.bg7{background: url('/images/bg/thunderstorm-bg.jpg');background-size: cover;}
+  &.bg8{background: url('/images/bg/snow-bg.jpg');background-size: cover;}
+  &.bg9{background: url('/images/bg/mist-bg.jpg');background-size: cover;}
+  background-size: cover;
+
+}
+/* ############ END/CONTAINER  ############## */
+
+/* ############   ############## */
+
+.weather-app{
+  position: relative;
+  height: 95%;
+  padding: 10px;
+  border: #51588c 1px solid;
+  border-radius: 20px 0 20px 0;
+  background: $waikawaRGBA;
+  color: #d2d4e4;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  header{
+    text-align: center;
+  }
+
+  main{
+    margin-top: 20px;
+    text-align: center;
+    p{
+      color:$pink;
+      text-align: left;
+      margin-left:38%;
+      font-size: 26px;
+      span{
+        color:white;
+      }
+    }
+    div{
+      text-align: center;
+    }
+    font-size: 30px;
+    font-weight: bold;
+    .temp{
+      font-family: 'Fredericka the Great', cursive;
+      font-size: 50px;
+      font-weight: normal;
+    }
+  }
+  footer{
+    position: absolute;
+    bottom: 20px;;
+    font-weight: bold;
+    padding-top: 20px;
+    text-align: center;
+    border-radius: 0 0 15px 0;
+  }
+}
+
+/* ############ END/  ############## */

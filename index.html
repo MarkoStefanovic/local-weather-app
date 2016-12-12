@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Local Weather App</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" media="screen" title="no title">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC%7cFredericka+the+Great" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <div id="cont" class="container">
+    <div class="weather-app">
+        <header>
+          <h1>Local Weather App</h1>
+        </header>
+        <main>
+          <!-- temperature, add celsus, farenhait conversion on click -->
+          <div id="temperature" class="temp"></div>
+          <!-- weather icon -->
+          <div id="icon"></div>
+          <!-- descriptive weather text -->
+          <p id="text"></p>
+          <!-- wind speed -->
+          <p id="wind"></p>
+          <!-- humidity and pressure -->
+          <p id="humidity"></p>
+          <p id="pressure"></p>
+          <!-- city, state -->
+          <p id="city"></p>
+          <label class="switch">
+              <input id="check" type="checkbox">
+              <span id="button" class="slider round"></span>
+          </label>
+          <div id="loading">loading...</div>
+        </main>
+        <footer>Coded and designed by <a href="http://markostefanovic.github.io/" target="_blank">Marko Stefanovic</a> for FreeCodeCamp © 2016</footer>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <script src="scripts/main.js"></script>
+
+</body>
+</html>

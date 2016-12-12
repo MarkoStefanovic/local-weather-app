@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="74" height="76" viewBox="0 0 74 76">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f9f9f9;
+        stroke: #2195b1;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        filter: url(#filter-chain-1);
+        fill-rule: evenodd;
+      }
+    </style>
+
+    <filter id="filter-chain-1" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" in="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.236" result="dropBlur"/>
+      <feFlood flood-opacity="0.15"/>
+      <feComposite operator="in" in2="dropBlur" result="dropShadowComp"/>
+      <feComposite in="SourceGraphic" result="shadowed"/>
+      <feFlood flood-color="#e4e4e4" flood-opacity="0.25"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+      <feBlend mode="multiply" in2="shadowed" result="solidFill"/>
+    </filter>
+  </defs>
+  <g style="fill: #f9f9f9; filter: url(#filter-chain-1)">
+    <path d="M55.000,42.000 C53.289,42.000 51.613,41.688 50.035,41.082 C46.418,44.238 41.816,46.000 37.000,46.000 C32.188,46.000 27.582,44.238 23.965,41.082 C22.387,41.688 20.711,42.000 19.000,42.000 C11.281,42.000 5.000,35.719 5.000,28.000 C5.000,20.281 11.281,14.000 19.000,14.000 C19.664,14.000 20.320,14.047 20.973,14.141 C24.711,9.053 30.602,6.000 37.000,6.000 C43.398,6.000 49.293,9.053 53.027,14.141 C53.680,14.047 54.336,14.000 55.000,14.000 C62.719,14.000 69.000,20.281 69.000,28.000 C69.000,35.719 62.719,42.000 55.000,42.000 ZM17.000,46.000 C19.211,46.000 21.000,47.789 21.000,50.000 C21.000,52.211 19.211,54.000 17.000,54.000 C14.789,54.000 13.000,52.211 13.000,50.000 C13.000,47.789 14.789,46.000 17.000,46.000 ZM25.000,62.000 C27.211,62.000 29.000,63.789 29.000,66.000 C29.000,68.211 27.211,70.000 25.000,70.000 C22.789,70.000 21.000,68.211 21.000,66.000 C21.000,63.789 22.789,62.000 25.000,62.000 ZM37.000,50.000 C39.211,50.000 41.000,51.789 41.000,54.000 C41.000,56.211 39.211,58.000 37.000,58.000 C34.789,58.000 33.000,56.211 33.000,54.000 C33.000,51.789 34.789,50.000 37.000,50.000 ZM49.000,62.000 C51.211,62.000 53.000,63.789 53.000,66.000 C53.000,68.211 51.211,70.000 49.000,70.000 C46.789,70.000 45.000,68.211 45.000,66.000 C45.000,63.789 46.789,62.000 49.000,62.000 ZM57.000,46.000 C59.211,46.000 61.000,47.789 61.000,50.000 C61.000,52.211 59.211,54.000 57.000,54.000 C54.789,54.000 53.000,52.211 53.000,50.000 C53.000,47.789 54.789,46.000 57.000,46.000 Z" id="path-1" style="stroke: inherit; filter: none; fill: inherit" class="cls-1"/>
+  </g>
+  <use xlink:href="#path-1" style="stroke: #2195b1; filter: none; fill: none"/>
+</svg>

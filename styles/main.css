@@ -1,0 +1,208 @@
+/* ############ COLORS  ############## */
+/* ############ END/COLORS  ############## */
+/* ############ MIXINS  ############## */
+/* ############ END/MIXINS  ############## */
+/* ############ TYPOGRAPHY  ############## */
+h1 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 30px;
+}
+
+a {
+  color: #94C9A9;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+/* ############ END/TYPOGRAPHY  ############## */
+/* ############ BUTTONS  ############## */
+.switch {
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  display: none;
+}
+
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2c2f4b;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border: 1px #323971 solid;
+}
+
+.switch .slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 3px;
+  background: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch .slider.round {
+  border-radius: 34px;
+}
+
+.switch .slider.round:before {
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background: #51588C;
+}
+
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #51588C;
+}
+
+.switch input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* ############ END/BUTTONS  ############## */
+/* ############ BASE  ############## */
+body {
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
+  background: #9b9cb8;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+/* ############ END/BASE  ############## */
+/* ############ CONTAINER  ############## */
+.container {
+  min-width: 300px;
+  max-width: 500px;
+  height: 95vh;
+  margin: 0 auto;
+  padding: 10px;
+  background-size: cover;
+}
+
+.container.bg0 {
+  background: url("/images/bg/clear-sky-day-bg.jpg");
+  background-size: cover;
+}
+
+.container.bg1 {
+  background: url("/images/bg/clear-sky-night-bg.jpg");
+  background-size: cover;
+}
+
+.container.bg2 {
+  background: url("/images/bg/few-clouds-day-bg.jpg");
+  background-size: cover;
+}
+
+.container.bg3 {
+  background: url("/images/bg/few-clouds-night-bg.jpg");
+  background-size: cover;
+}
+
+.container.bg4 {
+  background: url("/images/bg/scattered-clouds-bg.jpg");
+  background-size: cover;
+}
+
+.container.bg5 {
+  background: url("/images/bg/shower-rain-bg.jpg");
+  background-size: cover;
+}
+
+.container.bg6 {
+  background: url("/images/bg/rain-bg.jpg");
+  background-size: cover;
+}
+
+.container.bg7 {
+  background: url("/images/bg/thunderstorm-bg.jpg");
+  background-size: cover;
+}
+
+.container.bg8 {
+  background: url("/images/bg/snow-bg.jpg");
+  background-size: cover;
+}
+
+.container.bg9 {
+  background: url("/images/bg/mist-bg.jpg");
+  background-size: cover;
+}
+
+/* ############ END/CONTAINER  ############## */
+/* ############   ############## */
+.weather-app {
+  position: relative;
+  height: 95%;
+  padding: 10px;
+  border: #51588c 1px solid;
+  border-radius: 20px 0 20px 0;
+  background: rgba(55, 57, 113, 0.7);
+  color: #d2d4e4;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.weather-app header {
+  text-align: center;
+}
+
+.weather-app main {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.weather-app main p {
+  color: #DDCAD8;
+  text-align: left;
+  margin-left: 38%;
+  font-size: 26px;
+}
+
+.weather-app main p span {
+  color: white;
+}
+
+.weather-app main div {
+  text-align: center;
+}
+
+.weather-app main .temp {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 50px;
+  font-weight: normal;
+}
+
+.weather-app footer {
+  position: absolute;
+  bottom: 20px;
+  font-weight: bold;
+  padding-top: 20px;
+  text-align: center;
+  border-radius: 0 0 15px 0;
+}
+
+/* ############ END/  ############## */

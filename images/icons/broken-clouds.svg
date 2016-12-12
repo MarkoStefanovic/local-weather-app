@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="74" height="64" viewBox="0 0 74 64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f9f9f9;
+        stroke: #2195b1;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        filter: url(#filter-chain-1);
+        fill-rule: evenodd;
+      }
+    </style>
+
+    <filter id="filter-chain-1" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" in="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.236" result="dropBlur"/>
+      <feFlood flood-opacity="0.15"/>
+      <feComposite operator="in" in2="dropBlur" result="dropShadowComp"/>
+      <feComposite in="SourceGraphic" result="shadowed"/>
+      <feFlood flood-color="#e4e4e4" flood-opacity="0.25"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+      <feBlend mode="multiply" in2="shadowed" result="solidFill"/>
+    </filter>
+  </defs>
+  <g style="fill: #f9f9f9; filter: url(#filter-chain-1)">
+    <path d="M66.043,30.927 C67.871,33.291 69.000,36.216 69.000,39.427 C69.000,47.146 62.719,53.427 55.000,53.427 C53.289,53.427 51.613,53.114 50.035,52.509 C46.418,55.665 41.816,57.427 37.000,57.427 C32.188,57.427 27.582,55.665 23.965,52.509 C22.387,53.114 20.711,53.427 19.000,53.427 C11.281,53.427 5.000,47.146 5.000,39.427 C5.000,31.709 11.281,25.427 19.000,25.427 C19.664,25.427 20.320,25.474 20.973,25.568 C21.039,25.476 21.121,25.396 21.188,25.306 C21.086,24.691 21.000,24.070 21.000,23.427 C21.000,17.283 26.000,12.285 32.141,12.285 C32.442,12.285 32.742,12.296 33.039,12.320 C35.930,8.714 40.289,6.572 45.000,6.572 C49.715,6.572 54.070,8.714 56.961,12.320 C57.258,12.296 57.555,12.285 57.856,12.285 C64.000,12.285 69.000,17.283 69.000,23.427 C69.000,26.324 67.863,28.941 66.043,30.927 Z" id="path-1" style="stroke: inherit; filter: none; fill: inherit" class="cls-1"/>
+  </g>
+  <use xlink:href="#path-1" style="stroke: #2195b1; filter: none; fill: none"/>
+</svg>
