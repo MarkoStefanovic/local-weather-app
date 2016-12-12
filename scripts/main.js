@@ -26,19 +26,19 @@ $(function() {
       getWeatherData(json);
     });
   }
-$.ajaxSetup({ dataType: "jsonp" });
+
   // get wather data from openweathermap
   function getWeatherData(json) {
     var latitude = json.latitude;
     var longitude = json.longitude;
     var url = 'https://api.darksky.net/forecast/ad8f72e2d802ce97b7ab502975c435ac/'+latitude+','+longitude;
-    $.getJSON(url, function(json, textStatus) {
+    $.get(url, function(json, textStatus) {
 
       console.log('darksky.net API status: ', textStatus);
       console.log(json);
       calculateWeather(json);
-      $('#loading').hide();
-    });
+    },'jsonp');
+    $('#loading').hide();
 
   }
 
@@ -63,7 +63,7 @@ $.ajaxSetup({ dataType: "jsonp" });
 
     var id = findId(weatherId);
     var icon = icons[id][0];
-    renderData(celsius,farenheits,weather,humidity,pressure,windSpeed,icon,id)
+    renderData(celsius,fahrenheits,weather,humidity,pressure,windSpeed,icon,id)
 
 
     // finds id in our icons array from weatherId
@@ -79,7 +79,7 @@ $.ajaxSetup({ dataType: "jsonp" });
       }
 
 
-    function renderData(celsius,farenheits,weather,humidity,pressure,windSpeed,icon,id){
+    function renderData(celsius,fahrenheits,weather,humidity,pressure,windSpeed,icon,id){
 
       var $tempElement = $('#temperature');
       $tempElement.html(celsius + '&#8451;');
@@ -88,7 +88,7 @@ $.ajaxSetup({ dataType: "jsonp" });
       $('#pressure').html('pressure: <span>'+pressure+' hPa</span>');
       $('#wind').html('wind speed: <span>'+windSpeed+' miles/h</span>' );
       $('#icon').html('<img src="' + icon + '" />');
-      $('#city').html('location: <span>'+city + ', ' + country+'</span>');
+      //$('#city').html('location: <span>'+city + ', ' + country+'</span>');
       $('#cont').addClass('');
       $('#cont').addClass('.container bg'+id);
 
@@ -99,7 +99,7 @@ $.ajaxSetup({ dataType: "jsonp" });
           return $tempElement.html(celsius + '&#8451;');
         }else{
           console.log('unchecked');
-          return $tempElement.html(farenheits + '&#8457;');
+          return $tempElement.html(fahrenheits + '&#8457;');
         }
       });
     }
