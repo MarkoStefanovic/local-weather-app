@@ -20,7 +20,7 @@ $(function() {
   // get latitude and longitude from ip-api
   function getPositonData() {
     $('#loading').show();
-    $.getJSON('http://ip-api.com/json', function(json, textStatus) {
+    $.getJSON('https://ip-api.com/json', function(json, textStatus) {
       console.log('ip-api status: ', textStatus);
       console.log(json);
       getWeatherData(json);
