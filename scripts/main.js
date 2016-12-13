@@ -34,7 +34,7 @@ $(function() {
     var longitude = json.longitude;
     var city = json.city;
     var country = json.country_code;
-    var url = 'https://api.darksky.net/forecast/ad8f72e2d802ce97b7ab502975c435ac/'+latitude+','+longitude;
+    var url = 'https://api.darksky.net/forecast/ad8f72e2d802ce97b7ab502975c435ac/'+latitude+','+longitude+'?exclude=minutely,hourly,daily,alerts,flags';
     $.get(url, function(json, textStatus) {
 
       console.log('darksky.net API status: ', textStatus);
@@ -47,7 +47,7 @@ $(function() {
 
   function calculateWeather(json,city,country){
     // vars from openweather api
-    var fahrenheits = json.currently.temperature;
+    var fahrenheits = Math.round(json.currently.temperature);
     var celsius = Math.round((fahrenheits-32)* 5/9);
 
     var weatherId = json.currently.icon;
@@ -55,6 +55,7 @@ $(function() {
     var humidity = json.currently.humidity * 100;
     var pressure = json.currently.pressure;
     var windSpeed = json.currently.windSpeed;
+    var windSpeedMS = Math.round(windSpeed* 0.44704);
 
     var id = findId(weatherId);
     console.log('id:',id);
@@ -82,8 +83,8 @@ $(function() {
       $tempElement.html(celsius + '&#8451;');
       $('#text').html('<span>'+weather+'</span>');
       $('#humidity').html('humidity: <span>'+humidity+' &#37;</span>');
-      $('#pressure').html('pressure: <span>'+pressure+' hPa</span>');
-      $('#wind').html('wind speed: <span>'+windSpeed+' miles/h</span>' );
+      $('#pressure').html('pressure: <span>'+pressure+' mbar</span>');
+      $('#wind').html('wind speed: <span>'+windSpeedMS+' mps</span>' );
       $('#icon').html('<img src="' + icon + '" />');
       $('#city').html('location: <span>'+city + ', ' + country+'</span>');
       $('#cont').addClass('');
@@ -93,10 +94,12 @@ $(function() {
       $('#button').on('click',function() {
         if($('#check').is(':checked')){
           console.log('checked');
-          return $tempElement.html(celsius + '&#8451;');
+          $('#wind').html('wind speed: <span>'+windSpeedMS+' mps</span>' );
+          $tempElement.html(celsius + '&#8451;');
         }else{
           console.log('unchecked');
-          return $tempElement.html(fahrenheits + '&#8457;');
+          $('#wind').html('wind speed: <span>'+windSpeed+' mph</span>' );
+          $tempElement.html(fahrenheits + '&#8457;');
         }
       });
     }
