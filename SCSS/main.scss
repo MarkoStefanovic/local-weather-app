@@ -1,4 +1,5 @@
 // bower:scss
+@import "bower_components/include-media/dist/include-media";
 // endbower
 
 // 1.MIXINS
@@ -16,7 +17,6 @@ $purple:#9b9cb8;
 $shadow-green:#94C9A9;
 $pink:#DDCAD8;
 /* ############ END/COLORS  ############## */
-
 /* ############ MIXINS  ############## */
 
 
@@ -55,6 +55,9 @@ p{
   display: inline-block;
   width: 60px;
   height: 34px;
+  @include media("<tablet","landscape"){
+    margin-top: -140px;
+  }
 
   input{
     display: none;
@@ -83,7 +86,6 @@ p{
       -webkit-transition: 0.4s;
       transition: 0.4s;
     }
-
     &.round{
       border-radius: 34px;
     }
@@ -126,23 +128,23 @@ body{
   height: 95vh;
   margin: 0 auto;
   padding: 10px;
-  &.bg0{background: url('/images/bg/clear-sky-day-bg.jpg');background-size: cover;}
-  &.bg1{background: url('/images/bg/clear-sky-night-bg.jpg');background-size: cover;}
-  &.bg2{background: url('/images/bg/few-clouds-day-bg.jpg');background-size: cover;}
-  &.bg3{background: url('/images/bg/few-clouds-night-bg.jpg');background-size: cover;}
-  &.bg4{background: url('/images/bg/scattered-clouds-bg.jpg');background-size: cover;}
-  &.bg5{background: url('/images/bg/shower-rain-bg.jpg');background-size: cover;}
-  &.bg6{background: url('/images/bg/rain-bg.jpg');background-size: cover;}
-  &.bg7{background: url('/images/bg/thunderstorm-bg.jpg');background-size: cover;}
-  &.bg8{background: url('/images/bg/snow-bg.jpg');background-size: cover;}
-  &.bg9{background: url('/images/bg/mist-bg.jpg');background-size: cover;}
-  background-size: cover;
-
+  &.bg0{background: url('/local-weather-app/images/bg/clear-sky-day-bg.jpg');background-size: cover;}
+  &.bg1{background: url('/local-weather-app/images/bg/clear-sky-night-bg.jpg');background-size: cover;}
+  &.bg2{background: url('/local-weather-app/images/bg/few-clouds-day-bg.jpg');background-size: cover;}
+  &.bg3{background: url('/local-weather-app/images/bg/few-clouds-night-bg.jpg');background-size: cover;}
+  &.bg4{background: url('/local-weather-app/images/bg/scattered-clouds-bg.jpg');background-size: cover;}
+  &.bg5{background: url('/local-weather-app/images/bg/shower-rain-bg.jpg');background-size: cover;}
+  &.bg6{background: url('/local-weather-app/images/bg/rain-bg.jpg');background-size: cover;}
+  &.bg7{background: url('/local-weather-app/images/bg/thunderstorm-bg.jpg');background-size: cover;}
+  &.bg8{background: url('/local-weather-app/images/bg/snow-bg.jpg');background-size: cover;}
+  &.bg9{background: url('/local-weather-app/images/bg/mist-bg.jpg');background-size: cover;}
 }
 /* ############ END/CONTAINER  ############## */
 
 /* ############   ############## */
-
+.clear{
+  clear: both;
+}
 .weather-app{
   position: relative;
   height: 95%;
@@ -152,6 +154,9 @@ body{
   background: $waikawaRGBA;
   color: #d2d4e4;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  @include media("<tablet","landscape"){
+    height: 90%;
+  }
   header{
     text-align: center;
   }
@@ -159,11 +164,31 @@ body{
   main{
     margin-top: 20px;
     text-align: center;
+
+    .mainData{
+      @include media("<tablet","landscape"){
+      float: left;
+      margin-left: 50px;
+      p{
+        text-align: center;
+      }
+      }
+    }
+    .data{
+      @include media("<tablet","landscape"){
+        margin-top: 10px;
+        float: right;
+      }
+    }
+
     p{
       color:$pink;
       text-align: left;
-      margin-left:38%;
+    //  margin-left:38%;
       font-size: 26px;
+      @include media("<tablet","landscape"){
+      //  margin-left: 0;
+      }
       span{
         color:white;
       }
@@ -181,7 +206,7 @@ body{
   }
   footer{
     position: absolute;
-    bottom: 20px;;
+    bottom: 10px;
     font-weight: bold;
     padding-top: 20px;
     text-align: center;

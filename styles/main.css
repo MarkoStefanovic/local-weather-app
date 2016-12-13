@@ -173,6 +173,12 @@ body {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+@media (max-width: 767px) and (orientation: landscape) {
+  .weather-app {
+    height: 90%;
+  }
+}
+
 .weather-app header {
   text-align: center;
 }
