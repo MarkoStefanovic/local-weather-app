@@ -52,7 +52,7 @@ $(function() {
 
     var weatherId = json.currently.icon;
     var weather = json.currently.summary;
-    var humidity = json.currently.humidity * 100;
+    var humidity = Math.round(json.currently.humidity * 100);
     var pressure = json.currently.pressure;
     var windSpeed = json.currently.windSpeed;
     var windSpeedMS = Math.round(windSpeed* 0.44704);
