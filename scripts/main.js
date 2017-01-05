@@ -6,7 +6,7 @@ $(function() {
     ['images/icons/clear-sky-night.png','clear-night'],
     ['images/icons/few-clouds-day.png','partly-cloudy-day' ],
     ['images/icons/few-clouds-night.png','partly-cloudy-night'],
-    ['images/icons/scattered-clouds.png','cloudy' ],
+    ['images/icons/scattered-clouds.png','cloudy','wind' ],
     ['images/icons/shower-rain.png','sleet' ],
     ['images/icons/rain.png','rain' ],
     ['images/icons/thunderstorm.png','thunderstorm' ],
@@ -88,7 +88,7 @@ $(function() {
       $('#icon').html('<img src="' + icon + '" />');
       $('#city').html('location: <span>'+city + ', ' + country+'</span>');
       $('#cont').addClass('');
-      $('#cont').addClass('.container bg'+id);
+      $('#cont').addClass('.container.bg'+id);
 
       // toggle temperature button
       $('#button').on('click',function() {
