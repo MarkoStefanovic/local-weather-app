@@ -116,17 +116,17 @@ body {
   background-size: cover;
 }
 
-.container .bg2 {
+.container.bg2 {
   background: url("/images/bg/few-clouds-day-bg.jpg");
   background-size: cover;
 }
 
-.container .bg3 {
+.container.bg3 {
   background: url("/images/bg/few-clouds-night-bg.jpg");
   background-size: cover;
 }
 
-.container .bg4 {
+.container.bg4 {
   background: url("/images/bg/scattered-clouds-bg.jpg");
   background-size: cover;
 }
