@@ -41,7 +41,7 @@ $(function() {
       console.log(json);
       calculateWeather(json,city,country);
     },'jsonp');
-    $('#loading').hide();
+
 
   }
 
@@ -60,6 +60,7 @@ $(function() {
     var id = findId(weatherId);
     console.log('id:',id);
     var icon = icons[id][0];
+    $('#loading').hide();
     renderData(celsius,fahrenheits,weather,humidity,pressure,windSpeed,icon,id,city,country)
 
 
@@ -88,7 +89,7 @@ $(function() {
       $('#icon').html('<img src="' + icon + '" />');
       $('#city').html('location: <span>'+city + ', ' + country+'</span>');
       $('#cont').addClass('');
-      $('#cont').addClass('.container.bg'+id);
+      $('#cont').addClass('container bg'+id);
 
       // toggle temperature button
       $('#button').on('click',function() {
